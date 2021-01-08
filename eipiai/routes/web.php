@@ -22,6 +22,6 @@ $router->get('/courses', function () {
     return \App\Models\Course::all();
 });
  
-$router->get('/vassoura',function() use ($router){
-    return "n liga pra mim, só estou aqui varrendo";
+$router->get('/broom',function() use ($router){
+    return "dont mind me, im just sweeping";
 });
