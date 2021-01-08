@@ -21,7 +21,7 @@ $router->get('/', function () use ($router) {
 // $router->get('/courses', function () {
 //     return \App\Models\Course::all();
 // });
- 
+
 // $router->get('/broom',function() use ($router){
 //     return "dont mind me, im just sweeping";
 // });
@@ -32,6 +32,10 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix'=>'courses'],function() use ($router) {
     $router->get('/','CourseController@index' );
     $router->get('/{id}','CourseController@show');
+
+    $router->post('/','CourseController@store');
+    // $router->put('/{id}','CourseController@update');
+    // $router->delete('/{id}','CourseController@destroy');
 
 
 /*
