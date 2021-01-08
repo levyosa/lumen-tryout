@@ -34,10 +34,22 @@ class CourseController extends Controller
             ]);
     }
 
-    public function update($id){
+    public function update($id,Request $request){
+        $course = Course::find($id);
+        $course->update($request->all());
+        return response()->
+            json(['data'=>
+                ['message'=> 'course '.$course['name'].' updated successfully']
+            ]);
 
     }
     public function destroy($id ){
+        $course = Course::find($id);
+        $course->delete();
+        return response()->
+            json(['data'=>
+                ['message'=> 'course deleted successfully']
+            ]);
 
     }
 
